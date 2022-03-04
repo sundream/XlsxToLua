@@ -1079,8 +1079,10 @@ public class TableExportToLuaHelper
                         else
                             result = langValue;
                     }
-                    else
+                    else {
+                        result = inputData;
                         errorString = string.Format("输入的lang型数据的key（{0}）在lang文件中找不到对应的value", inputData);
+                    }
 
                     break;
                 }

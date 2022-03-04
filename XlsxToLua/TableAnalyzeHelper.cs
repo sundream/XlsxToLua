@@ -760,8 +760,9 @@ public class TableAnalyzeHelper
                 fieldInfo.LangKeys.Add(inputData);
                 if (AppValues.LangData.ContainsKey(inputData))
                     fieldInfo.Data.Add(AppValues.LangData[inputData]);
-                else
-                    fieldInfo.Data.Add(null);
+                else {
+                    fieldInfo.Data.Add(inputData);
+                }
             }
         }
 
