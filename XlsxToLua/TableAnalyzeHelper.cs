@@ -758,9 +758,10 @@ public class TableAnalyzeHelper
             else
             {
                 fieldInfo.LangKeys.Add(inputData);
-                if (AppValues.LangData.ContainsKey(inputData))
-                    fieldInfo.Data.Add(AppValues.LangData[inputData]);
-                else {
+                string text;
+                if (AppValues.LangData.TryGetValue(inputData,out text) && text != "") {
+                    fieldInfo.Data.Add(text);
+                } else {
                     fieldInfo.Data.Add(inputData);
                 }
             }
